@@ -1,6 +1,7 @@
 import requests
 import pprint
-import json 
+import json
+import os 
 from datetime import datetime
 
 pp = pprint.PrettyPrinter(indent=4)
@@ -12,6 +13,7 @@ cities = ['Paris, FR', 'Montpellier, FR', 'Clermont-Ferrand, FR', 'Argences, Fr'
 for city in cities:
 
     response = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&mode=json&APPID={api_key_openweather}")
+    print(response)
     json_data = json.loads(response.text)
     #print(pp.pprint(json_data))
 
