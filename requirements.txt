@@ -14,4 +14,4 @@ requests-cache==0.5.2
 Scrappy==0.3.0a4
 six==1.12.0
 tvdb-api==2.0
-urllib3==1.25.6
+urllib3==1.26.5
