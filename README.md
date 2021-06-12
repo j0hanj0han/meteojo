@@ -1,3 +1,3 @@
-# meteoblue_wrapper
-A Meteoblue python wrapper
+# meteojo
+A meteo python wrapper
 For E-Ink Display In Raspberry
