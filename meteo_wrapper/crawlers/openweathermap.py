@@ -11,9 +11,10 @@ api_key_openweather  = os.environ["API_KEY"]
 
 cities = ['Paris, FR', 'Montpellier, FR', 'Clermont-Ferrand, FR', 'Argences, Fr']
 for city in cities:
-
-    response = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&mode=json&APPID={api_key_openweather}")
+    
+    response = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key_openweather}")
     print(response)
+    import pdb; pdb.set_trace()
     json_data = json.loads(response.text)
     #print(pp.pprint(json_data))
 
