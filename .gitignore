@@ -2,3 +2,4 @@
 .vscode
 config.txt
 launcher.sh
+*/__pycache__*
