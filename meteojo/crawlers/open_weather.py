@@ -4,6 +4,9 @@ import json
 import os 
 from datetime import datetime
 
+from PIL import Image
+
+
 pp = pprint.PrettyPrinter(indent=4)
 
 # your api_key_here
@@ -15,9 +18,14 @@ def get_weather(city):
     response = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key_openweather}")
     print(response)
     json_data = json.loads(response.text)
-    import pdb; pdb.set_trace()
+    pprint.pprint(json_data)
     return json_data
 
+def show_weather_icon(json_data):
+    image_name = json_data["weather"][0]["icon"]
+    image_path = f'./meteojo/icons/{image_name}.png'
+    img = Image.open(image_path)
+    img.show()
 
 
 # for city in cities:
