@@ -21,11 +21,37 @@ def get_weather(city):
     pprint.pprint(json_data)
     return json_data
 
-def show_weather_icon(json_data):
-    image_name = json_data["weather"][0]["icon"]
-    image_path = f'./meteojo/icons/{image_name}.png'
-    img = Image.open(image_path)
-    img.show()
+def get_icon_path(json_data):
+    icon_name = json_data["weather"][0]["icon"]
+    icon_path = f'./meteojo/icons/{icon_name}.png'
+    return icon_path
+
+
+
+def get_current_weather_image(icon_path):
+    width = 202 
+    height = 104
+
+    background  = Image.new( mode = "RGBA", size = (width, height), color = (255, 255, 255) )
+    icon = Image.open(icon_path).convert("RGBA")
+    
+    foreground =  icon.resize((50,50))
+
+
+
+
+
+    background.paste(foreground, (0, 0), foreground)
+    
+    background.show()
+
+
+    #background_image.save('background_image.png', 'PNG')
+     
+    
+    
+
+
 
 
 # for city in cities:
