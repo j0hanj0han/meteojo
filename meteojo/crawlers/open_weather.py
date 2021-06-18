@@ -26,7 +26,16 @@ def get_icon_path(json_data):
     icon_path = f'./meteojo/icons/{icon_name}.png'
     return icon_path
 
-
+def get_weather_all():
+    # paris
+    lat = 48.8534
+    lon = 2.3488
+    response = requests.get(f"https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&units=metric&exclude=hourly,minutely&appid={api_key_openweather}")
+    json_data = json.loads(response.text)
+    #pprint.pprint(json_data)
+    for day in json_data['daily']:
+        print(datetime.fromtimestamp(day['dt']), day['temp']['min'], day['temp']['max'])
+    return json_data
 
 def get_current_weather_image(icon_path):
     width = 202 
@@ -36,10 +45,6 @@ def get_current_weather_image(icon_path):
     icon = Image.open(icon_path).convert("RGBA")
     
     foreground =  icon.resize((50,50))
-
-
-
-
 
     background.paste(foreground, (0, 0), foreground)
     

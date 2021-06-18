@@ -7,7 +7,11 @@ api_key_openweather  = os.environ["API_KEY"]
 
 if __name__ == "__main__":
     city = 'Paris, FR'
-    weather_data = open_weather.get_weather(city)
-    icon_path = open_weather.get_icon_path(weather_data)
+    #weather_data = open_weather.get_weather(city)
+    #icon_path = open_weather.get_icon_path(weather_data)
     
-    open_weather.get_current_weather_image(icon_path)
+    #open_weather.get_current_weather_image(icon_path)
+
+    open_weather.get_weather_all()
+
+
