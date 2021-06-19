@@ -12,6 +12,7 @@ if __name__ == "__main__":
     
     #open_weather.get_current_weather_image(icon_path)
 
-    open_weather.get_weather_all()
+    forecasts = open_weather.get_weather_all()
+    open_weather.get_forecast_image(forecasts)
 
 
