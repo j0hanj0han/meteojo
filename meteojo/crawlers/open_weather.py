@@ -31,8 +31,8 @@ def get_weather_all():
     lat = 48.8534
     lon = 2.3488
 
-    lat = 43.610769
-    lon = 3.876716
+    # lat = 43.610769
+    # lon = 3.876716
     response = requests.get(f"https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&units=metric&exclude=hourly,minutely&appid={api_key_openweather}")
     json_data = json.loads(response.text)
     #pprint.pprint(json_data)
@@ -55,6 +55,7 @@ def get_current_weather_image(icon_path):
 
 def get_forecast_image(forecasts):
     days  =  forecasts['daily']
+    import pdb; pdb.set_trace()
     nb_of_days = len(days)
     icons_paths = []
     # get all icons path
