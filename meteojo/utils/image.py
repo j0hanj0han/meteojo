@@ -3,8 +3,7 @@
 
 
 def get_icon(icon_name):
-    icon_name = json_data["weather"][0]["icon"]
-    icon = f'./meteojo/icons/{icon_name}.png'
+    icon = f'../icons/{icon_name}.png'
     return icon
 
 
